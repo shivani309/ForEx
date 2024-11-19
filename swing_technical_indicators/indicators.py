@@ -193,3 +193,47 @@ def calculate_bollinger_bands(data, period=20, num_std_dev=2):
 
     return bands
 
+import pandas as pd
+
+def calculate_macd(data: pd.DataFrame, column_name: str = 'Closing_price', short_period: int = 12, long_period: int = 26, signal_period: int = 9) -> pd.DataFrame:
+    """
+    Calculate the Moving Average Convergence Divergence (MACD) and its Signal Line for a given DataFrame.
+
+    Parameters:
+    - data (pd.DataFrame): Input DataFrame containing the price data.
+    - column_name (str): The name of the column to calculate MACD on (default is 'Closing_price').
+    - short_period (int): The short period for the fast EMA (default is 12).
+    - long_period (int): The long period for the slow EMA (default is 26).
+    - signal_period (int): The period for the Signal Line (default is 9).
+
+    Returns:
+    - pd.DataFrame: A DataFrame containing the MACD, Signal Line, and the MACD Histogram.
+    """
+    
+    # Ensure the column exists
+    if column_name not in data.columns:
+        raise ValueError(f"Column '{column_name}' does not exist in the DataFrame.")
+    
+    # Calculate the short-term EMA (12-period)
+    short_ema = data[column_name].ewm(span=short_period, adjust=False).mean()
+    
+    # Calculate the long-term EMA (26-period)
+    long_ema = data[column_name].ewm(span=long_period, adjust=False).mean()
+    
+    # Calculate the MACD (difference between short-term and long-term EMAs)
+    macd = short_ema - long_ema
+    
+    # Calculate the Signal Line (9-period EMA of the MACD)
+    signal_line = macd.ewm(span=signal_period, adjust=False).mean()
+    
+    # Calculate the MACD Histogram (difference between MACD and Signal Line)
+    macd_histogram = macd - signal_line
+    
+    # Create a DataFrame with the MACD, Signal Line, and Histogram
+    macd_df = pd.DataFrame({
+        'MACD': macd,
+        'Signal_Line': signal_line,
+        'MACD_Histogram': macd_histogram
+    })
+    
+    return macd_df
