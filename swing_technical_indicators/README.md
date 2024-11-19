@@ -32,10 +32,10 @@ To install the library locally, use:
 ```bash
 pip install -e .
 
-# Usage
+##  Usage
 Here's a quick guide on how to use the library:
 
-**Importing the Library**
+Importing the Library
 import pandas as pd
 import swing_technical_indicators as sti
 
