@@ -1,6 +1,9 @@
 import pandas as pd
 import  numpy as np
 
+import numpy as np
+import pandas as pd
+
 def calculate_rsi(data: pd.DataFrame, column_name: str = 'Closing_price', period: int = 14) -> pd.Series:
     """
     Calculate the Relative Strength Index (RSI) for a given DataFrame.
@@ -30,19 +33,27 @@ def calculate_rsi(data: pd.DataFrame, column_name: str = 'Closing_price', period
     loss_df = pd.DataFrame(loss, columns=['Loss'])
     
     # Step 4: Calculate the rolling average gain and loss
-    avg_gain = gain_df['Gain'].rolling(window=period, min_periods=1).mean()
-    avg_loss = loss_df['Loss'].rolling(window=period, min_periods=1).mean()
+    avg_gain = gain_df['Gain'].rolling(window=period, min_periods=period).mean()
+    avg_loss = loss_df['Loss'].rolling(window=period, min_periods=period).mean()
     
     # Step 5: Calculate the Relative Strength (RS)
     rs = avg_gain / avg_loss
     
     # Step 6: Calculate the RSI
     rsi = 100 - (100 / (1 + rs))
-    
-    # Align the result with the input DataFrame
+
     rsi = pd.Series(rsi, name=f"RSI_{period}").fillna(0)
     
+    # Align the result with the input DataFrame
+    
+    
     return rsi
+
+
+
+
+
+
 
 def calculate_200ema(data: pd.DataFrame, column_name: str = 'Closing_price', period: int = 200) -> pd.Series:
     """
