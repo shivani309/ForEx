@@ -248,3 +248,64 @@ def calculate_macd(data: pd.DataFrame, column_name: str = 'Closing_price', short
     })
     
     return macd_df
+
+def calculate_swing_support_resistance(data: pd.DataFrame, timeframe: str = 'daily') -> pd.DataFrame:
+    """
+    Calculate Support and Resistance levels for Swing Trading using Pivot Points for the given timeframe.
+
+    Parameters:
+    - data (pd.DataFrame): Input DataFrame containing the price data.
+    - timeframe (str): The timeframe for pivot point calculation, either 'daily', 'weekly', or 'monthly'.
+
+    Returns:
+    - pd.DataFrame: DataFrame with Pivot Points, Support, and Resistance levels, forward filled for non-resampled rows.
+    """
+    # Ensure the 'Date' column is in datetime format and set it as the index
+    data['Date'] = pd.to_datetime(data['Date'])
+    data.set_index('Date', inplace=True)
+
+    if timeframe == 'daily':
+        high_col = 'Day_high'
+        low_col = 'Day_low'
+        close_col = 'Closing_price'
+    elif timeframe == 'weekly':
+        # Resample for weekly data
+        resampled_data = data.resample('W').agg({
+            'Day_high': 'max',
+            'Day_low': 'min',
+            'Closing_price': 'last'
+        })
+        high_col = 'Day_high'
+        low_col = 'Day_low'
+        close_col = 'Closing_price'
+    elif timeframe == 'monthly':
+        # Resample for monthly data
+        resampled_data = data.resample('M').agg({
+            'Day_high': 'max',
+            'Day_low': 'min',
+            'Closing_price': 'last'
+        })
+        high_col = 'Day_high'
+        low_col = 'Day_low'
+        close_col = 'Closing_price'
+    else:
+        raise ValueError("Timeframe must be 'daily', 'weekly', or 'monthly'.")
+
+    # Calculate Pivot Point, Support, and Resistance levels
+    resampled_data['Pivot_Point'] = (resampled_data[high_col] + resampled_data[low_col] + resampled_data[close_col]) / 3
+    resampled_data['Support_1'] = (2 * resampled_data['Pivot_Point']) - resampled_data[high_col]
+    resampled_data['Resistance_1'] = (2 * resampled_data['Pivot_Point']) - resampled_data[low_col]
+    resampled_data['Support_2'] = resampled_data['Pivot_Point'] - (resampled_data[high_col] - resampled_data[low_col])
+    resampled_data['Resistance_2'] = resampled_data['Pivot_Point'] + (resampled_data[high_col] - resampled_data[low_col])
+
+    # Forward fill the calculated levels for the original data
+    resampled_data = resampled_data[['Pivot_Point', 'Support_1', 'Resistance_1', 'Support_2', 'Resistance_2']]
+    data = data.join(resampled_data, how='outer')
+    
+    # Fill NaN values using forward fill and backward fill
+    data[['Pivot_Point', 'Support_1', 'Resistance_1', 'Support_2', 'Resistance_2']] = data[['Pivot_Point', 'Support_1', 'Resistance_1', 'Support_2', 'Resistance_2']].ffill().bfill()
+
+    # Reset the index for the final output
+    data.reset_index(inplace=True)
+
+    return data
