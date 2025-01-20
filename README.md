@@ -1,1 +1,4 @@
-# ForEx
+# ForEx forecasting framework
+
+## Introduction 
+
