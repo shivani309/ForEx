@@ -118,6 +118,10 @@ This project integrates a **Multi-Agentic Retrieval-Augmented Generation (RAG)**
 ### Architecture Diagram
 ![image](https://github.com/user-attachments/assets/fbd82cbb-940e-46ac-8e2d-889bf65da5b2)
 
+### Mutli-agentic RAG Recommendation Result
+![image](https://github.com/user-attachments/assets/e6cb8669-0150-4f52-9a77-911c2f01427b)
+
+
 
 ### Project UI
 ![WhatsApp Image 2025-02-10 at 10 37 14 PM](https://github.com/user-attachments/assets/67ec81ee-6df4-46d0-9e1f-9eb4825aae46)
