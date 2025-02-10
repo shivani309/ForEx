@@ -120,6 +120,8 @@ This project integrates a **Multi-Agentic Retrieval-Augmented Generation (RAG)**
 
 
 ### Project UI
+![WhatsApp Image 2025-02-10 at 10 37 14 PM](https://github.com/user-attachments/assets/67ec81ee-6df4-46d0-9e1f-9eb4825aae46)
+
 ![WhatsApp Image 2025-02-10 at 12 13 05 PM](https://github.com/user-attachments/assets/9b41a7cc-460e-4033-b83b-421eba9aab05)
 
 
