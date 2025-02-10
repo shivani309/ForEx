@@ -1,9 +1,8 @@
-# ForEx forecasting framework
+# ForEx Forecasting Framework
 
 ## Introduction 
 
 This project aims to improve Forex forecasting by addressing limitations in existing methodologies. By leveraging a dataset spanning the last 10 years, we capture long-term market trends, focusing specifically on the four major currency pairs used by Indian traders: USD/INR, EUR/INR, GBP/INR, and JPY/INR. The framework is tailored for swing trading, supporting positions held over days to weeks. A key contribution is the creation of the Swing Technical Indicators Library, designed to aid in market analysis and provide actionable insights.
-
 
 ---
 
@@ -132,12 +131,11 @@ For more details, refer to the official [Alpha Vantage API documentation](https:
 ### Data and APIs
 - [Alpha Vantage API](https://www.alphavantage.co/)
 
-
 ---
 
 ## Contributing
 
-Contributions are welcome! If you'd like to contribute, please follow these steps:
+We welcome contributions! Please submit a pull request or open an issue for discussions.
 
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature-name`).
@@ -149,9 +147,22 @@ Contributions are welcome! If you'd like to contribute, please follow these step
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+**Copyright (C) 2025 Shivani309**
 
----
+This software is licensed under the **Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**. This means:
+- You are free to use, modify, and distribute the Swing Technical Indicator Library **for non-commercial purposes**.
+- You must **cite** this repository in any publication, project, or derivative work.
+- For **commercial use**, please contact the author for licensing.
 
+**Attribution Requirement:**
+```
+@software{shivani_swing_indicator,
+  author = {Shivani309},
+  title = {Swing Technical Indicator Library},
+  year = {2025},
+  url = {https://github.com/shivani309/ForEx}
+}
+```
 
+For more details, refer to the [LICENSE](LICENSE) file.
 
