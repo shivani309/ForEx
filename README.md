@@ -14,10 +14,11 @@ This project aims to improve Forex forecasting by addressing limitations in exis
 4. [Usage](#usage)
 5. [Technical Indicators Used](#technical-indicators-used)
 6. [Alpha Vantage API Integration](#alpha-vantage-api-integration)
-7. [Project Workflow](#project-workflow)
-8. [Resources for Learning Forex Trading](#resources-for-learning-forex-trading)
-9. [Contributing](#contributing)
-10. [License](#license)
+7. [Multi-Agentic RAG](#multi-agentic-rag)
+8. [Project Workflow](#project-workflow)
+9. [Resources for Learning Forex Trading](#resources-for-learning-forex-trading)
+10. [Contributing](#contributing)
+11. [License](#license)
 
 ---
 
@@ -34,6 +35,7 @@ The Forex Currency Price Forecasting and Recommendation System is designed to an
 - Personalized trading recommendations.
 - Integration with Alpha Vantage API for real-time Forex data.
 - Modular and extensible codebase for further enhancements.
+- Multi-Agentic Retrieval-Augmented Generation (RAG) for financial analysis.
 
 ---
 
@@ -66,6 +68,8 @@ The Forex Currency Price Forecasting and Recommendation System is designed to an
    ```
 
 3. View results and recommendations in the `results/` directory.
+
+---
 
 ## Technical Indicators Used
 
@@ -100,6 +104,24 @@ This project uses the [Alpha Vantage API](https://www.alphavantage.co/) to fetch
    ```
 
 For more details, refer to the official [Alpha Vantage API documentation](https://www.alphavantage.co/documentation/).
+
+---
+
+## Multi-Agentic RAG
+
+This project integrates a **Multi-Agentic Retrieval-Augmented Generation (RAG)** system specifically for financial analysis. The RAG system utilizes **Phi data** to enhance financial insights and recommendations. The system includes multiple agents responsible for:
+
+- **Retrieving financial data** from structured and unstructured sources.
+- **Analyzing trends** using natural language processing.
+- **Generating insights** using AI-powered reasoning.
+
+### Architecture Diagram
+![image](https://github.com/user-attachments/assets/fbd82cbb-940e-46ac-8e2d-889bf65da5b2)
+
+
+### Project UI
+![WhatsApp Image 2025-02-10 at 12 13 05 PM](https://github.com/user-attachments/assets/9b41a7cc-460e-4033-b83b-421eba9aab05)
+
 
 ---
 
@@ -154,10 +176,12 @@ This software is licensed under the **Attribution-NonCommercial 4.0 Internationa
 - You must **cite** this repository in any publication, project, or derivative work.
 - For **commercial use**, please contact the author for licensing.
 
+
+
 **Attribution Requirement:**
 ```
-@software{shivani_swing_indicator,
-  author = {Shivani309},
+@software{swing_technical_indicators,
+  author = {Shivani309 ,Uzzx1110, SEJALHANMANTE},
   title = {Swing Technical Indicator Library},
   year = {2025},
   url = {https://github.com/shivani309/ForEx}
