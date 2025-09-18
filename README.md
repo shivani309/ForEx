@@ -14,11 +14,10 @@ This project aims to improve Forex forecasting by addressing limitations in exis
 4. [Usage](#usage)
 5. [Technical Indicators Used](#technical-indicators-used)
 6. [Alpha Vantage API Integration](#alpha-vantage-api-integration)
-7. [Multi-Agentic RAG](#multi-agentic-rag)
-8. [Project Workflow](#project-workflow)
-9. [Resources for Learning Forex Trading](#resources-for-learning-forex-trading)
-10. [Contributing](#contributing)
-11. [License](#license)
+7. [Project Workflow](#project-workflow)
+8. [Resources for Learning Forex Trading](#resources-for-learning-forex-trading)
+9. [Contributing](#contributing)
+10. [License](#license)
 
 ---
 
@@ -35,7 +34,7 @@ The Forex Currency Price Forecasting and Recommendation System is designed to an
 - Personalized trading recommendations.
 - Integration with Alpha Vantage API for real-time Forex data.
 - Modular and extensible codebase for further enhancements.
-- Multi-Agentic Retrieval-Augmented Generation (RAG) for financial analysis.
+
 
 ---
 
@@ -107,19 +106,8 @@ For more details, refer to the official [Alpha Vantage API documentation](https:
 
 ---
 
-## Multi-Agentic RAG
 
-This project integrates a **Multi-Agentic Retrieval-Augmented Generation (RAG)** system specifically for financial analysis. The RAG system utilizes **Phi data** to enhance financial insights and recommendations. The system includes multiple agents responsible for:
 
-- **Retrieving financial data** from structured and unstructured sources.
-- **Analyzing trends** using natural language processing.
-- **Generating insights** using AI-powered reasoning.
-
-### Architecture Diagram
-![image](https://github.com/user-attachments/assets/fbd82cbb-940e-46ac-8e2d-889bf65da5b2)
-
-### Mutli-agentic RAG Recommendation Result
-![image](https://github.com/user-attachments/assets/e6cb8669-0150-4f52-9a77-911c2f01427b)
 
 
 
